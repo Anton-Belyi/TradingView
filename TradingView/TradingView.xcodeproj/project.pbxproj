@@ -12,6 +12,11 @@
 		3A762DC026C8087700474C91 /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A762DBF26C8087700474C91 /* WatchListViewController.swift */; };
 		3A762DC526C8087900474C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A762DC426C8087900474C91 /* Assets.xcassets */; };
 		3A762DC826C8087900474C91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A762DC626C8087900474C91 /* LaunchScreen.storyboard */; };
+		3ABB494926C92C9F007FC28F /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB494826C92C9F007FC28F /* Assembly.swift */; };
+		3ABB494B26C92CC9007FC28F /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB494A26C92CC9007FC28F /* Presenter.swift */; };
+		3ABB494D26C92CFF007FC28F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB494C26C92CFF007FC28F /* Interactor.swift */; };
+		3ABB494F26C92D29007FC28F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB494E26C92D29007FC28F /* Router.swift */; };
+		3ABB495126C955EF007FC28F /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB495026C955EF007FC28F /* Entity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		3A762DC426C8087900474C91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A762DC726C8087900474C91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A762DC926C8087900474C91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3ABB494826C92C9F007FC28F /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		3ABB494A26C92CC9007FC28F /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		3ABB494C26C92CFF007FC28F /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		3ABB494E26C92D29007FC28F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		3ABB495026C955EF007FC28F /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,17 +64,17 @@
 		3A762DBA26C8087700474C91 /* TradingView */ = {
 			isa = PBXGroup;
 			children = (
+				3A762DBB26C8087700474C91 /* AppDelegate.swift */,
+				3A762DBD26C8087700474C91 /* SceneDelegate.swift */,
 				3A762DCF26C8118300474C91 /* View */,
 				3A762DD026C8118B00474C91 /* Interactor */,
 				3A762DD126C8119C00474C91 /* Presenter */,
 				3A762DD226C811A700474C91 /* Entity */,
 				3A762DD326C811B400474C91 /* Router */,
-				3A762DBB26C8087700474C91 /* AppDelegate.swift */,
-				3A762DBD26C8087700474C91 /* SceneDelegate.swift */,
-				3A762DBF26C8087700474C91 /* WatchListViewController.swift */,
 				3A762DC426C8087900474C91 /* Assets.xcassets */,
 				3A762DC626C8087900474C91 /* LaunchScreen.storyboard */,
 				3A762DC926C8087900474C91 /* Info.plist */,
+				3ABB494826C92C9F007FC28F /* Assembly.swift */,
 			);
 			path = TradingView;
 			sourceTree = "<group>";
@@ -72,6 +82,7 @@
 		3A762DCF26C8118300474C91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3A762DBF26C8087700474C91 /* WatchListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -79,6 +90,7 @@
 		3A762DD026C8118B00474C91 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				3ABB494C26C92CFF007FC28F /* Interactor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -86,6 +98,7 @@
 		3A762DD126C8119C00474C91 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				3ABB494A26C92CC9007FC28F /* Presenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -93,6 +106,7 @@
 		3A762DD226C811A700474C91 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				3ABB495026C955EF007FC28F /* Entity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -100,6 +114,7 @@
 		3A762DD326C811B400474C91 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				3ABB494E26C92D29007FC28F /* Router.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -173,9 +188,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ABB494D26C92CFF007FC28F /* Interactor.swift in Sources */,
 				3A762DC026C8087700474C91 /* WatchListViewController.swift in Sources */,
+				3ABB494926C92C9F007FC28F /* Assembly.swift in Sources */,
+				3ABB494F26C92D29007FC28F /* Router.swift in Sources */,
+				3ABB495126C955EF007FC28F /* Entity.swift in Sources */,
 				3A762DBC26C8087700474C91 /* AppDelegate.swift in Sources */,
 				3A762DBE26C8087700474C91 /* SceneDelegate.swift in Sources */,
+				3ABB494B26C92CC9007FC28F /* Presenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
