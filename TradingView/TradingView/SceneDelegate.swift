@@ -14,14 +14,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
-        // Create and launch WatchListViewController
+        // Create and launch
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let myRouter = WatchListRouter.start()
+        let initViewController = myRouter.entry
+        
+        
         let window = UIWindow(windowScene: windowScene)
-        let vc = WatchListViewController()
-        let navVC = UINavigationController(rootViewController: vc)
-        window.rootViewController = navVC
-        window.makeKeyAndVisible()
+        window.rootViewController = initViewController
         self.window = window
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

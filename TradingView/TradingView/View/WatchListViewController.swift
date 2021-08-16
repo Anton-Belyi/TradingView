@@ -7,7 +7,23 @@
 
 import UIKit
 
-class WatchListViewController: UIViewController {
+protocol ViewProtocol {
+    var presenter: PresenterProtocol? { get set }
+    func updateWatchList(watchList: [WatchListEntity])
+    func update(error: String)
+}
+
+class WatchListViewController: UIViewController, ViewProtocol {
+// MARK: - Protocol
+    var presenter: PresenterProtocol?
+    
+    func updateWatchList(watchList: [WatchListEntity]) {
+        
+    }
+    
+    func update(error: String) {
+        
+    }
     
     private let tableview: UITableView = {
         let tableView = UITableView()
@@ -15,7 +31,7 @@ class WatchListViewController: UIViewController {
         return tableView
     }()
 
-    // MARK: viewDidLoad
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableview)
@@ -23,6 +39,7 @@ class WatchListViewController: UIViewController {
         tableview.delegate = self
         view.backgroundColor = .systemBackground
         //Title
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "WatchList"
     }

@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A26000426CAB72100A9E9C7 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A26000326CAB72100A9E9C7 /* data.json */; };
 		3A762DBC26C8087700474C91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A762DBB26C8087700474C91 /* AppDelegate.swift */; };
 		3A762DBE26C8087700474C91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A762DBD26C8087700474C91 /* SceneDelegate.swift */; };
 		3A762DC026C8087700474C91 /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A762DBF26C8087700474C91 /* WatchListViewController.swift */; };
 		3A762DC526C8087900474C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A762DC426C8087900474C91 /* Assets.xcassets */; };
 		3A762DC826C8087900474C91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A762DC626C8087900474C91 /* LaunchScreen.storyboard */; };
 		3ABB494926C92C9F007FC28F /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB494826C92C9F007FC28F /* Assembly.swift */; };
-		3ABB494B26C92CC9007FC28F /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB494A26C92CC9007FC28F /* Presenter.swift */; };
-		3ABB494D26C92CFF007FC28F /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB494C26C92CFF007FC28F /* Interactor.swift */; };
-		3ABB494F26C92D29007FC28F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB494E26C92D29007FC28F /* Router.swift */; };
-		3ABB495126C955EF007FC28F /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB495026C955EF007FC28F /* Entity.swift */; };
+		3ABB494B26C92CC9007FC28F /* WatchListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB494A26C92CC9007FC28F /* WatchListPresenter.swift */; };
+		3ABB494D26C92CFF007FC28F /* WatchListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB494C26C92CFF007FC28F /* WatchListInteractor.swift */; };
+		3ABB494F26C92D29007FC28F /* WatchListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB494E26C92D29007FC28F /* WatchListRouter.swift */; };
+		3ABB495126C955EF007FC28F /* WatchListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABB495026C955EF007FC28F /* WatchListEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A26000326CAB72100A9E9C7 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		3A762DB826C8087700474C91 /* TradingView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradingView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A762DBB26C8087700474C91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A762DBD26C8087700474C91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,10 +30,10 @@
 		3A762DC726C8087900474C91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A762DC926C8087900474C91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3ABB494826C92C9F007FC28F /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
-		3ABB494A26C92CC9007FC28F /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
-		3ABB494C26C92CFF007FC28F /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
-		3ABB494E26C92D29007FC28F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		3ABB495026C955EF007FC28F /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		3ABB494A26C92CC9007FC28F /* WatchListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListPresenter.swift; sourceTree = "<group>"; };
+		3ABB494C26C92CFF007FC28F /* WatchListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListInteractor.swift; sourceTree = "<group>"; };
+		3ABB494E26C92D29007FC28F /* WatchListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListRouter.swift; sourceTree = "<group>"; };
+		3ABB495026C955EF007FC28F /* WatchListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A26000226CAAEE100A9E9C7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3A26000326CAB72100A9E9C7 /* data.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		3A762DAF26C8087700474C91 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 			children = (
 				3A762DBB26C8087700474C91 /* AppDelegate.swift */,
 				3A762DBD26C8087700474C91 /* SceneDelegate.swift */,
+				3A26000226CAAEE100A9E9C7 /* Data */,
 				3A762DCF26C8118300474C91 /* View */,
 				3A762DD026C8118B00474C91 /* Interactor */,
 				3A762DD126C8119C00474C91 /* Presenter */,
@@ -90,7 +101,7 @@
 		3A762DD026C8118B00474C91 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				3ABB494C26C92CFF007FC28F /* Interactor.swift */,
+				3ABB494C26C92CFF007FC28F /* WatchListInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -98,7 +109,7 @@
 		3A762DD126C8119C00474C91 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				3ABB494A26C92CC9007FC28F /* Presenter.swift */,
+				3ABB494A26C92CC9007FC28F /* WatchListPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -106,7 +117,7 @@
 		3A762DD226C811A700474C91 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				3ABB495026C955EF007FC28F /* Entity.swift */,
+				3ABB495026C955EF007FC28F /* WatchListEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -114,7 +125,7 @@
 		3A762DD326C811B400474C91 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				3ABB494E26C92D29007FC28F /* Router.swift */,
+				3ABB494E26C92D29007FC28F /* WatchListRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -177,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A762DC826C8087900474C91 /* LaunchScreen.storyboard in Resources */,
+				3A26000426CAB72100A9E9C7 /* data.json in Resources */,
 				3A762DC526C8087900474C91 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,14 +200,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ABB494D26C92CFF007FC28F /* Interactor.swift in Sources */,
+				3ABB494D26C92CFF007FC28F /* WatchListInteractor.swift in Sources */,
 				3A762DC026C8087700474C91 /* WatchListViewController.swift in Sources */,
 				3ABB494926C92C9F007FC28F /* Assembly.swift in Sources */,
-				3ABB494F26C92D29007FC28F /* Router.swift in Sources */,
-				3ABB495126C955EF007FC28F /* Entity.swift in Sources */,
+				3ABB494F26C92D29007FC28F /* WatchListRouter.swift in Sources */,
+				3ABB495126C955EF007FC28F /* WatchListEntity.swift in Sources */,
 				3A762DBC26C8087700474C91 /* AppDelegate.swift in Sources */,
 				3A762DBE26C8087700474C91 /* SceneDelegate.swift in Sources */,
-				3ABB494B26C92CC9007FC28F /* Presenter.swift in Sources */,
+				3ABB494B26C92CC9007FC28F /* WatchListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

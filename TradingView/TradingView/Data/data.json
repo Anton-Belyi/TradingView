@@ -1,0 +1,12 @@
+{
+    [
+        {
+            "name" : "Dollar"
+            "description" : "desc"
+            "price": "prrrrr"
+            "percentage": "percent"
+            "absolute": "abs"
+            "logo": "log"
+        }
+    ]
+}
