@@ -8,5 +8,14 @@
 import UIKit
 
 struct WatchListEntity: Codable {
-    
+    let data: [ResultItems]
+}
+
+struct ResultItems: Codable {
+    let name: String
+    let description: String
+    let price: String
+    let percentage: String
+    let absolute: String
+    let logo: String
 }
