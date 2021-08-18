@@ -19,6 +19,10 @@ protocol PresenterProtocol {
 }
 
 class WatchListPresenter: PresenterProtocol {
+    func interactorDidFetchWatchListEntity(result: Result<[WatchListEntity], Error>) {
+    
+    }
+    
     
     var router: RouterProtocol?
     var interactor: InteractorProtocol?
@@ -28,12 +32,12 @@ class WatchListPresenter: PresenterProtocol {
         interactor?.getWatchListEntity()
     }
     
-    func interactorDidFetchWatchListEntity(result: Result<[WatchListEntity], Error>) {
-        switch result {
-        case .success(let stock):
-            view?.updateWatchList(watchList: WatchListEntity)
-        case .failure:
-            view?.update(error: "Wrong")
-        }
-    }
+//    func interactorDidFetchWatchListEntity(result: Result<[WatchListEntity], Error>) {
+//        switch result {
+//        case .success(let stock):
+//            view?.updateWatchList(watchList: WatchListEntity)
+//        case .failure:
+//            view?.update(error: "Wrong")
+//        }
+//    }
 }

@@ -15,24 +15,28 @@ protocol InteractorProtocol {
 
 
 class WatchListInteractor: InteractorProtocol {
+    func getWatchListEntity() {
+    
+    }
+    
 
     var presenter: PresenterProtocol?
     
     var result: WatchListEntity?
     
     
-    func getWatchListEntity() {
-        guard let path = Bundle.main.path(forResource: "data", ofType: "json") else { return }
-        let url = URL(fileURLWithPath: path)
-        
-        do {
-            let jsonData = try Data(contentsOf: url)
-            result = try JSONDecoder().decode(WatchListEntity.self, from: jsonData)
-            self.presenter?.interactorDidFetchWatchListEntity(result: .success(<#T##[WatchListEntity]#>))
-        }
-        catch {
-            self.presenter?.interactorDidFetchWatchListEntity(result: .failure(FetchError.failed))
-        }
-
-    }
+//    func getWatchListEntity() {
+//        guard let path = Bundle.main.path(forResource: "data", ofType: "json") else { return }
+//        let url = URL(fileURLWithPath: path)
+//
+//        do {
+//            let jsonData = try Data(contentsOf: url)
+//            result = try JSONDecoder().decode(WatchListEntity.self, from: jsonData)
+//            self.presenter?.interactorDidFetchWatchListEntity(result: .success(<#T##[WatchListEntity]#>))
+//        }
+//        catch {
+//            self.presenter?.interactorDidFetchWatchListEntity(result: .failure(FetchError.failed))
+//        }
+//
+//    }
 }

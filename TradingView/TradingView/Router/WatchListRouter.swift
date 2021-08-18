@@ -7,19 +7,17 @@
 
 import UIKit
 
-typealias EntryPoint = ViewProtocol & UIViewController
-
 protocol RouterProtocol {
-    var entry: EntryPoint? { get }
+
     static func start() -> RouterProtocol
 }
 
 class WatchListRouter: RouterProtocol {
-    var entry: EntryPoint?
     static func start() -> RouterProtocol {
         let router = WatchListRouter()
                 
         var view: ViewProtocol = WatchListViewController()
+        
         var presenter: PresenterProtocol = WatchListPresenter()
         var interactor: InteractorProtocol = WatchListInteractor()
         
@@ -31,7 +29,6 @@ class WatchListRouter: RouterProtocol {
         
         interactor.presenter = presenter
         
-        router.entry = view as? EntryPoint
         return router
 
     }
