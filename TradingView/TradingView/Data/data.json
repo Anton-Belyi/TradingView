@@ -1,12 +1,111 @@
-{
-   "data": [
-        {
-            "name" : "Dollar"
-            "description" : "desc"
-            "price": "prrrrr"
-            "percentage": "percent"
-            "absolute": "abs"
-            "logo": "log"
-        }
-    ]
-}
+[
+    {
+        "name": "US",
+        "description": "Доллар США",
+        "price": "prrrrr",
+        "percentage": "percent",
+        "absolute": "abs",
+        "status": "true",
+        "logo": "https://s3-symbol-logo.tradingview.com/country/US--96.webp"
+    },
+    {
+        "name": "RU",
+        "description": "Рубль",
+        "price": "prrrrr",
+        "percentage": "percent",
+        "absolute": "abs",
+        "status": "true",
+        "logo": "https://s3-symbol-logo.tradingview.com/country/RU--96.webp"
+    },
+    {
+        "name": "UK",
+        "description": "Фунт",
+        "price": "prrrrr",
+        "percentage": "percent",
+        "absolute": "abs",
+        "status": "true",
+        "logo": "https://s3-symbol-logo.tradingview.com/country/UK--96.webp"
+    },
+    {
+        "name": "GOLD",
+        "description": "Золото",
+        "price": "prrrrr",
+        "percentage": "percent",
+        "absolute": "abs",
+        "status": "true",
+        "logo": "https://s3-symbol-logo.tradingview.com/metal/gold--96.webp"
+    },
+    {
+        "name": "SILVER",
+        "description": "Серебро",
+        "price": "prrrrr",
+        "percentage": "percent",
+        "absolute": "abs",
+        "status": "true",
+        "logo": "https://s3-symbol-logo.tradingview.com/metal/silver--96.webp"
+    },
+    {
+        "name": "OIL",
+        "description": "Нефть",
+        "price": "prrrrr",
+        "percentage": "percent",
+        "absolute": "abs",
+        "status": "true",
+        "logo": "https://s3-symbol-logo.tradingview.com/crude-oil--96.webp"
+    },
+    {
+        "name": "APPLE",
+        "description": "Акции Apple",
+        "price": "prrrrr",
+        "percentage": "percent",
+        "absolute": "abs",
+        "status": "true",
+        "logo": "https://s3-symbol-logo.tradingview.com/apple--96.webp"
+    },
+    {
+        "name": "TESLA",
+        "description": "Акции Tesla",
+        "price": "prrrrr",
+        "percentage": "percent",
+        "absolute": "abs",
+        "status": "true",
+        "logo": "https://s3-symbol-logo.tradingview.com/tesla--96.webp"
+    },
+    {
+        "name": "NETFLIX",
+        "description": "Акции Netflix",
+        "price": "prrrrr",
+        "percentage": "percent",
+        "absolute": "abs",
+        "status": "true",
+        "logo": "https://s3-symbol-logo.tradingview.com/netflix--96.webp"
+    },
+    {
+        "name": "SBERBANK",
+        "description": "Акции Сбербанк",
+        "price": "prrrrr",
+        "percentage": "percent",
+        "absolute": "abs",
+        "status": "true",
+        "logo": "https://s3-symbol-logo.tradingview.com/sberbank--96.webp"
+    },
+    {
+        "name": "VTB BANK",
+        "description": "Акции ВТБ",
+        "price": "prrrrr",
+        "percentage": "percent",
+        "absolute": "abs",
+        "status": "true",
+        "logo": "https://s3-symbol-logo.tradingview.com/vtbr--96.webp"
+    },
+    {
+        "name": "LUKOIL",
+        "description": "Акции Лукойл",
+        "price": "prrrrr",
+        "percentage": "percent",
+        "absolute": "abs",
+        "status": "true",
+        "logo": "https://s3-symbol-logo.tradingview.com/lukoil--96.webp"
+    }
+]
+

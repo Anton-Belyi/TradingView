@@ -7,43 +7,52 @@
 
 import UIKit
 
-protocol ViewProtocol {
+// 1. Подгрузить картинки при апдейте ячейки + класс ячейки
+// 2. Добавить в JSON добавить флаг (true, false)
+// 3. Тики
+
+protocol ViewProtocol: AnyObject {
     var presenter: PresenterProtocol? { get set }
-    func updateWatchList(watchList: [WatchListEntity])
-    func update(error: String)
+    func updateStocks(with stocks: [Stocks])
+    func update(with error: String)
 }
 
 class WatchListViewController: UIViewController, ViewProtocol {
+    
+    let cell = WatchListCell()
+    
+    
+    var stocks: [Stocks] = []
 // MARK: - Protocol
     var presenter: PresenterProtocol?
-    
-    
-    
-    func updateWatchList(watchList: [WatchListEntity]) {
-        
+
+    func updateStocks(with stocks: [Stocks]) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.stocks = stocks
+            self.tableview.reloadData() // reloadTableViewCell
+            let index = IndexPath(row: 5, section: 0)
+            self.tableview.reloadRows(at: [index], with: .automatic)
+        }
     }
     
-    func update(error: String) {
-        
+    func update(with error: String) {
     }
     // TableView
     private let tableview: UITableView = {
-        let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        let tableView = UITableView() // перенести в init
+        tableView.register(WatchListCell.self, forCellReuseIdentifier: WatchListCell.identifier)
         return tableView
     }()
     
     // BarButton
     
-    private let barButton: UIBarButtonItem = {
-        let barButton = UIBarButtonItem()
-        return barButton
-    }()
+    private let barButton = UIBarButtonItem()
     
     //Search
     
     private func setUpSearchController() {
-        let resultVC = WatchListSearch()
+        let resultVC = WatchListSearch()// перенести в init
         let searchVC = UISearchController(searchResultsController: resultVC)
         navigationItem.searchController = searchVC
     }
@@ -73,35 +82,43 @@ class WatchListViewController: UIViewController, ViewProtocol {
         view.backgroundColor = .systemBackground
         // Search
         setUpSearchController()
-        
         //Title NavVC
+        
+        
+        cell.downImg()
+    
+        
         self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapAdd)), animated: true)
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "WatchList"
-
-        
+        title = "Watchlist"
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableview.frame = view.bounds
+
     }
-    
 }
 
 extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        100
+        stocks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Stock exchange"
+        let cell = tableview.dequeueReusableCell(withIdentifier: WatchListCell.identifier, for: indexPath) as! WatchListCell
+        cell.textLabel?.text = stocks[indexPath.row].name
+        cell.downImg()
+        cell.imageView?.downloaded(from: stocks[indexPath.row].logo)
+        cell.detailTextLabel?.text = stocks[indexPath.row].description
+        cell.imageView?.layer.cornerRadius = 20
+        cell.imageView?.clipsToBounds = true
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 55//
     }
 }
