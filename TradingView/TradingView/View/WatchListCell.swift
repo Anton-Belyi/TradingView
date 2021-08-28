@@ -10,48 +10,39 @@ import UIKit
 class WatchListCell: UITableViewCell {
     static let identifier = "WatchListCell"
     //prepareforReuse cellimageview(nil)
-    
 
+    var stockImage = UIImageView()
+    var stockLabel = UILabel()
 
     
-    var title = UILabel()
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.imageView?.frame = CGRect(x: 5, y: 10, width: 40, height: 40)
+//        self.imageView?.frame = CGRect(x: 5, y: contentView.bounds.size.width / 2, width: 40, height: 40)
+        
+
+        
+        // Настройка Лэйбла
+        
+        stockLabel.frame = CGRect(x: 5, y: 5, width: 100, height: contentView.frame.size.height-10)
+        
+        // Настройка Изображения
+        stockImage.frame = CGRect(x: 16, y: 12, width: 36, height: 36) // Поправить центр!!!
+        stockImage.layer.cornerRadius = 18
+        stockImage.clipsToBounds = true
     }
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+//        contentView.addSubview(stockLabel)
+        contentView.addSubview(stockImage)
+        
 
     }
-    
-
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-//    func downImg() {
-//    if let url = URL(string: "https://s3-symbol-logo.tradingview.com/metal/gold--96.webp") {
-//        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-//            guard let data = data, error == nil else { return }
-//
-//            DispatchQueue.main.async { /// execute on main thread
-//                self.translatesAutoresizingMaskIntoConstraints = false
-//                self.imageView?.image = UIImage(data: data)
-//            }
-//        }
-//
-//        task.resume()
-//    }
-//    }
-    
-    
-    func downImg() {
-        
     }
 
 }

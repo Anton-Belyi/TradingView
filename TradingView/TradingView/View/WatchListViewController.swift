@@ -19,9 +19,6 @@ protocol ViewProtocol: AnyObject {
 
 class WatchListViewController: UIViewController, ViewProtocol {
     
-    let cell = WatchListCell()
-    
-    
     var stocks: [Stocks] = []
 // MARK: - Protocol
     var presenter: PresenterProtocol?
@@ -84,10 +81,6 @@ class WatchListViewController: UIViewController, ViewProtocol {
         setUpSearchController()
         //Title NavVC
         
-        
-        cell.downImg()
-    
-        
         self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapAdd)), animated: true)
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Watchlist"
@@ -108,17 +101,17 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: WatchListCell.identifier, for: indexPath) as! WatchListCell
+
         cell.textLabel?.text = stocks[indexPath.row].name
-        cell.downImg()
-        cell.imageView?.downloaded(from: stocks[indexPath.row].logo)
+        cell.stockImage.downloaded(from: stocks[indexPath.row].logo)
         cell.detailTextLabel?.text = stocks[indexPath.row].description
-        cell.imageView?.layer.cornerRadius = 20
-        cell.imageView?.clipsToBounds = true
+
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55//
+        return 60//
     }
 }
