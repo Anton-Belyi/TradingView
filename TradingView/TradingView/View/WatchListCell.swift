@@ -13,30 +13,53 @@ class WatchListCell: UITableViewCell {
 
     var stockImage = UIImageView()
     var stockLabel = UILabel()
+    var stockSubtitle = UILabel()
+    var stockPrice = UILabel()
+    var stockPercentage = UILabel()
 
-    
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
-//        self.imageView?.frame = CGRect(x: 5, y: contentView.bounds.size.width / 2, width: 40, height: 40)
-        
 
-        
         // Настройка Лэйбла
         
-        stockLabel.frame = CGRect(x: 5, y: 5, width: 100, height: contentView.frame.size.height-10)
+        stockLabel.frame = CGRect(x: stockImage.frame.size.width + 26, y: 11, width: 100, height: 16)
+        stockLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        stockLabel.textColor = #colorLiteral(red: 0.6128784021, green: 0.6128784021, blue: 0.6128784021, alpha: 1)
         
         // Настройка Изображения
         stockImage.frame = CGRect(x: 16, y: 12, width: 36, height: 36) // Поправить центр!!!
         stockImage.layer.cornerRadius = 18
         stockImage.clipsToBounds = true
+        
+        // Настройка сабтайтла
+        stockSubtitle.frame = CGRect(x: stockImage.frame.size.width + 26, y: stockLabel.frame.size.height + 19, width: 200, height: 16)
+        stockSubtitle.font = stockSubtitle.font.withSize(14)
+        stockSubtitle.textColor = #colorLiteral(red: 0.61385113, green: 0.6139419079, blue: 0.6138312817, alpha: 1)
+        
+        // Настройка цены
+        
+        stockPrice.frame = CGRect(x: contentView.frame.size.width - stockPrice.frame.size.width - 16, y: 11, width: 60, height: 16)
+        stockPrice.textColor = #colorLiteral(red: 0.61385113, green: 0.6139419079, blue: 0.6138312817, alpha: 1)
+        stockPrice.font = UIFont.boldSystemFont(ofSize: 16)
+        stockPrice.textAlignment = NSTextAlignment.right
+        
+        // Процентное изменение цены
+        
+        stockPercentage.frame = CGRect(x: contentView.frame.size.width - stockPercentage.frame.size.width - 16, y: stockPrice.frame.size.height + 19, width: 60, height: 16)
+        stockPercentage.font = stockPercentage.font.withSize(15)
+        stockPercentage.textColor = #colorLiteral(red: 0.186942637, green: 0.5768624544, blue: 0.5230153799, alpha: 1)
+        stockPercentage.textAlignment = NSTextAlignment.right
     }
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-//        contentView.addSubview(stockLabel)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.addSubview(stockLabel)
         contentView.addSubview(stockImage)
+        contentView.addSubview(stockSubtitle)
+        contentView.addSubview(stockPrice)
+        contentView.addSubview(stockPercentage)
         
 
     }

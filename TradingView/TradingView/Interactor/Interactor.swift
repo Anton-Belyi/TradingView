@@ -39,4 +39,7 @@ class Interactor: InteractorProtocol {
         }
         task.resume()
     }
+    
+    
+    
 }

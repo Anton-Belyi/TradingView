@@ -22,14 +22,29 @@ class WatchListViewController: UIViewController, ViewProtocol {
     var stocks: [Stocks] = []
 // MARK: - Protocol
     var presenter: PresenterProtocol?
+    
+    // TIMER
+    var timer: Timer?
+    
+    func setTimer() {
+        self.timer = Timer(timeInterval: 1.0, target: self, selector: #selector(interval), userInfo: nil, repeats: true)
+    }
+    
+    @objc func interval() {
+     print("TMER")
+    }
 
     func updateStocks(with stocks: [Stocks]) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.stocks = stocks
-            self.tableview.reloadData() // reloadTableViewCell
-            let index = IndexPath(row: 5, section: 0)
-            self.tableview.reloadRows(at: [index], with: .automatic)
+            self.tableview.reloadData()
+            
+            
+            // обновление ячеек
+
+//            let index = IndexPath(row: 0, section: 0)
+//            self.tableview.reloadRows(at: [index], with: .automatic)
         }
     }
     
@@ -79,6 +94,7 @@ class WatchListViewController: UIViewController, ViewProtocol {
         view.backgroundColor = .systemBackground
         // Search
         setUpSearchController()
+        
         //Title NavVC
         
         self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapAdd)), animated: true)
@@ -91,6 +107,7 @@ class WatchListViewController: UIViewController, ViewProtocol {
         tableview.frame = view.bounds
 
     }
+    
 }
 
 extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -101,10 +118,14 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: WatchListCell.identifier, for: indexPath) as! WatchListCell
+        
+        
 
-        cell.textLabel?.text = stocks[indexPath.row].name
+        cell.stockLabel.text = stocks[indexPath.row].name
         cell.stockImage.downloaded(from: stocks[indexPath.row].logo)
-        cell.detailTextLabel?.text = stocks[indexPath.row].description
+        cell.stockSubtitle.text = stocks[indexPath.row].description
+        cell.stockPrice.text = String(stocks[indexPath.row].price)
+        cell.stockPercentage.text = "+" + String(stocks[indexPath.row].percentage) + "%"
 
         
         
@@ -112,6 +133,6 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60//
+        return 60
     }
 }
