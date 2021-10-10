@@ -7,12 +7,22 @@
 
 import UIKit
 
-struct Stocks: Codable {
+struct Stocks: Codable, Hashable {
     let name: String
     let description: String
     var price: Double
-    let percentage: Double
-//    let absolute: String
-//    let status: String
+    var percentage: Double
+    var absolute: Double
+    var status: String
     let logo: String
+}
+
+enum StocksCategoriesSection: CaseIterable {
+    case allStocks
+}
+
+extension Stocks {
+    static func ==(lhs: Stocks, rhs: Stocks) -> Bool {
+        return lhs.name == rhs.name
+    }
 }

@@ -12,10 +12,10 @@ enum FetchError: Error {
 }
 
 protocol PresenterProtocol {
-    var router: RouterProtocol? { get set } //удалить
-    var interactor: InteractorProtocol? { get set } //удалить
-    var view: ViewProtocol? { get set } //удалить
-    func interactorDidFetchStocks(with result: Result<[Stocks], Error>)
+    var router: RouterProtocol? { get set }
+    var interactor: InteractorProtocol? { get set }
+    var view: ViewProtocol? { get set }
+    func interactorDidFetchStocks(with result: [Stocks])
 }
 
 class Presenter: PresenterProtocol {
@@ -28,14 +28,7 @@ class Presenter: PresenterProtocol {
     }
     weak var view: ViewProtocol?
     
-    func interactorDidFetchStocks(with result: Result<[Stocks], Error>) {
-        switch result {
-        case .success(let stocks):
-            view?.updateStocks(with: stocks)
-        case .failure:
-            view?.update(with: "UPDATE")
-        }
+    func interactorDidFetchStocks(with result: [Stocks]) {
+        view?.updateStocks(with: result)
     }
-    
-    
 }

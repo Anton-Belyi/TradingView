@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3A26000426CAB72100A9E9C7 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A26000326CAB72100A9E9C7 /* data.json */; };
-		3A32368A26CD895C005484D6 /* WatchListSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A32368926CD895C005484D6 /* WatchListSearch.swift */; };
 		3A742A5A26D27E130080A53A /* WatchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742A5926D27E130080A53A /* WatchListCell.swift */; };
 		3A762DBC26C8087700474C91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A762DBB26C8087700474C91 /* AppDelegate.swift */; };
 		3A762DBE26C8087700474C91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A762DBD26C8087700474C91 /* SceneDelegate.swift */; };
@@ -23,7 +22,6 @@
 
 /* Begin PBXFileReference section */
 		3A26000326CAB72100A9E9C7 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		3A32368926CD895C005484D6 /* WatchListSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSearch.swift; sourceTree = "<group>"; };
 		3A742A5926D27E130080A53A /* WatchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListCell.swift; sourceTree = "<group>"; };
 		3A762DB826C8087700474C91 /* TradingView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradingView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A762DBB26C8087700474C91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 			children = (
 				3A762DBF26C8087700474C91 /* WatchListViewController.swift */,
 				3A742A5926D27E130080A53A /* WatchListCell.swift */,
-				3A32368926CD895C005484D6 /* WatchListSearch.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,7 +200,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A32368A26CD895C005484D6 /* WatchListSearch.swift in Sources */,
 				3ABB494D26C92CFF007FC28F /* Interactor.swift in Sources */,
 				3A762DC026C8087700474C91 /* WatchListViewController.swift in Sources */,
 				3ABB494F26C92D29007FC28F /* Router.swift in Sources */,
@@ -353,6 +349,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N9NR9N6DGU;
 				INFOPLIST_FILE = TradingView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,6 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N9NR9N6DGU;
 				INFOPLIST_FILE = TradingView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

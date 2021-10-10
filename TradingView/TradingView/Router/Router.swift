@@ -21,22 +21,17 @@ class Router: RouterProtocol {
     static func start() -> RouterProtocol {
         let router = Router()
                 
-        let view: ViewProtocol = WatchListViewController() // перенести в функцию
-        var presenter: PresenterProtocol = Presenter() // перенести в функцию
-        var interactor: InteractorProtocol = Interactor() // перенести в функцию
+        let view: ViewProtocol = WatchListViewController()
+        var presenter: PresenterProtocol = Presenter()
+        var interactor: InteractorProtocol = Interactor()
         
         view.presenter = presenter
-        
         interactor.presenter = presenter
-        interactor.getStocks()
-        
         presenter.router = router
         presenter.view = view
         presenter.interactor = interactor
     
         router.entry = view as? EntryPoint
         return router
-
     }
-    
 }

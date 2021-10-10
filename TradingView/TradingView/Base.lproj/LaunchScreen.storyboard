@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,18 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoTV" translatesAutoresizingMaskIntoConstraints="NO" id="0lH-i0-Akk">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" red="0.074817933140000001" green="0.092512346800000006" blue="0.15085300800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-preview-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ghf-vy-PQL">
+                                <rect key="frame" x="57" y="303" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="C2O-1B-Xo9"/>
+                                    <constraint firstAttribute="width" constant="300" id="QC5-sc-zqz"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.051940791309999998" green="0.065724931659999999" blue="0.1155521497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="0lH-i0-Akk" secondAttribute="bottom" id="6r1-16-9wQ"/>
-                            <constraint firstItem="0lH-i0-Akk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JRS-3H-E8o"/>
-                            <constraint firstItem="0lH-i0-Akk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="O3n-pa-OXl"/>
-                            <constraint firstItem="0lH-i0-Akk" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="jvd-Aw-Haj"/>
+                            <constraint firstItem="ghf-vy-PQL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="RRQ-Py-Brg"/>
+                            <constraint firstItem="ghf-vy-PQL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XS6-Ye-MCp"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,9 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LogoTV" width="400" height="400"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="logo-preview-icon" width="630" height="630"/>
     </resources>
 </document>
