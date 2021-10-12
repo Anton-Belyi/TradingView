@@ -64,7 +64,8 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
         dataSource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { tableView, indexPath, allStocksData -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: WatchListCell.identifier, for: indexPath) as! WatchListCell
             cell.stockNameLabel.text = allStocksData.name
-            cell.stockImage.downloaded(from: allStocksData.logo)
+            cell.stockImage.loadImageWithUrl(allStocksData.logo)
+            
             cell.stockSubtitle.text = allStocksData.description
             cell.stockPrice.text = "\(String(format: "%.2f", allStocksData.price))"
             
@@ -88,7 +89,7 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
         updateDataSource()
     }
     
-    func updateDataSource() {
+    private func updateDataSource() {
         var snapshot = NSDiffableDataSourceSnapshot<StocksCategoriesSection, Stocks>()
         snapshot.appendSections([.allStocks])
         snapshot.appendItems(self.stocks)
@@ -96,3 +97,4 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
         dataSource.apply(snapshot)
     }
 }
+    

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A26000426CAB72100A9E9C7 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A26000326CAB72100A9E9C7 /* data.json */; };
+		3A6E83772715BC87003E8E96 /* ImageCacheLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6E83762715BC87003E8E96 /* ImageCacheLoader.swift */; };
 		3A742A5A26D27E130080A53A /* WatchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742A5926D27E130080A53A /* WatchListCell.swift */; };
 		3A762DBC26C8087700474C91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A762DBB26C8087700474C91 /* AppDelegate.swift */; };
 		3A762DBE26C8087700474C91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A762DBD26C8087700474C91 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		3A26000326CAB72100A9E9C7 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		3A6E83762715BC87003E8E96 /* ImageCacheLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheLoader.swift; sourceTree = "<group>"; };
 		3A742A5926D27E130080A53A /* WatchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListCell.swift; sourceTree = "<group>"; };
 		3A762DB826C8087700474C91 /* TradingView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradingView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A762DBB26C8087700474C91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				3ABB494C26C92CFF007FC28F /* Interactor.swift */,
+				3A6E83762715BC87003E8E96 /* ImageCacheLoader.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				3ABB494F26C92D29007FC28F /* Router.swift in Sources */,
 				3A742A5A26D27E130080A53A /* WatchListCell.swift in Sources */,
 				3ABB495126C955EF007FC28F /* Entity.swift in Sources */,
+				3A6E83772715BC87003E8E96 /* ImageCacheLoader.swift in Sources */,
 				3A762DBC26C8087700474C91 /* AppDelegate.swift in Sources */,
 				3A762DBE26C8087700474C91 /* SceneDelegate.swift in Sources */,
 				3ABB494B26C92CC9007FC28F /* Presenter.swift in Sources */,

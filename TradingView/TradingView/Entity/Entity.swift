@@ -14,7 +14,7 @@ struct Stocks: Codable, Hashable {
     var percentage: Double
     var absolute: Double
     var status: String
-    let logo: String
+    let logo: URL
 }
 
 enum StocksCategoriesSection: CaseIterable {
