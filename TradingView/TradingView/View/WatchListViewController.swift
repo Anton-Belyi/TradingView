@@ -15,7 +15,7 @@ protocol ViewProtocol: AnyObject {
 class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtocol {
     
     var presenter: PresenterProtocol?
-
+    
     private var stocks: [Stocks] = []
     
     func updateStocks(with stocks: [Stocks]) {
@@ -25,7 +25,7 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
             self.createStockDataSource()
         }
     }
-
+    
     // MARK: TableView
     
     private var tableView: UITableView!
@@ -46,21 +46,21 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
     }
     
     // MARK: ViewDidLoad
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            configureTableView()
-            tableView.delegate = self
-
-            navigationController?.navigationBar.prefersLargeTitles = true
-            title = "Watchlist"
-        }
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureTableView()
+        tableView.delegate = self
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Watchlist"
+    }
+    
     //MARK: DiffableDataSource
-
+    
     private var dataSource: UITableViewDiffableDataSource<StocksCategoriesSection, Stocks>!
     
     func createStockDataSource() {
-
+        
         dataSource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { tableView, indexPath, allStocksData -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: WatchListCell.identifier, for: indexPath) as! WatchListCell
             cell.stockNameLabel.text = allStocksData.name
@@ -85,16 +85,14 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
                 cell.stockAbsolute.textColor = UIColor(red: 255/255, green: 59/255, blue: 55/255, alpha: 1.0)
                 cell.stockAbsolute.text = "\(String(format: "%.3f", (allStocksData.absolute)))"
                 cell.stockPercentage.text = "\(String(format: "%.2f", (allStocksData.percentage)))%"
-            case .plus:
+                
+            default:
                 cell.stockPercentage.textColor = UIColor(red: 0/255, green: 136/255, blue: 122/255, alpha: 1.0)
                 cell.stockAbsolute.textColor = UIColor(red: 0/255, green: 136/255, blue: 122/255, alpha: 1.0)
                 cell.stockAbsolute.text = "+\(String(format: "%.3f", (allStocksData.absolute)))"
                 cell.stockPercentage.text = "+\(String(format: "%.2f", (allStocksData.percentage)))%"
-            default:
-break
-                
             }
-
+            
             return cell
         })
         updateDataSource()
@@ -104,8 +102,8 @@ break
         var snapshot = NSDiffableDataSourceSnapshot<StocksCategoriesSection, Stocks>()
         snapshot.appendSections([.allStocks])
         snapshot.appendItems(self.stocks)
-    
+        
         dataSource.apply(snapshot)
     }
 }
-    
+
