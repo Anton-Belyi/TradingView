@@ -25,8 +25,6 @@ class ImageLoader: UIImageView {
 
             if error != nil {
                 print(error as Any)
-                DispatchQueue.main.async(execute: {
-                })
                 return
             }
 
