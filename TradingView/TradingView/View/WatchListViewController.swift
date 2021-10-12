@@ -79,21 +79,22 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
             cell.stockSubtitle.text = allStocksData.description
             cell.stockPrice.text = "\(String(format: "%.2f", allStocksData.price))"
             
-            if allStocksData.percentage.sign == .minus {
+            switch allStocksData.percentage.sign {
+            case .minus:
                 cell.stockPercentage.textColor = UIColor(red: 255/255, green: 59/255, blue: 55/255, alpha: 1.0)
                 cell.stockAbsolute.textColor = UIColor(red: 255/255, green: 59/255, blue: 55/255, alpha: 1.0)
-                
                 cell.stockAbsolute.text = "\(String(format: "%.3f", (allStocksData.absolute)))"
                 cell.stockPercentage.text = "\(String(format: "%.2f", (allStocksData.percentage)))%"
-            } else if allStocksData.percentage.sign == .plus {
+            case .plus:
                 cell.stockPercentage.textColor = UIColor(red: 0/255, green: 136/255, blue: 122/255, alpha: 1.0)
                 cell.stockAbsolute.textColor = UIColor(red: 0/255, green: 136/255, blue: 122/255, alpha: 1.0)
                 cell.stockAbsolute.text = "+\(String(format: "%.3f", (allStocksData.absolute)))"
                 cell.stockPercentage.text = "+\(String(format: "%.2f", (allStocksData.percentage)))%"
-            } else {
-                cell.stockPercentage.textColor = .black
-                cell.stockAbsolute.textColor = .black
+            default:
+break
+                
             }
+
             return cell
         })
         updateDataSource()
