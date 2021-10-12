@@ -59,12 +59,12 @@ class Interactor: InteractorProtocol {
                     newStocksArray[randomIndex].price -= randomPercentRange
                 }
                 for index in 0..<newStocksArray.count {
-                    if oldPrice[index].price < newStocksArray[index].price {
+                    if oldPrice[index].price < newStocksArray[index].price && newStocksArray[randomIndex].status == "open" {
                         newStocksArray[index].percentage = (100 * (newStocksArray[index].price - oldPrice[index].price) / oldPrice[index].price)
                         newStocksArray[index].absolute = newStocksArray[index].price - oldPrice[index].price
                         self.presenter?.interactorDidFetchStocks(with: newStocksArray)
                         
-                    } else if oldPrice[index].price > newStocksArray[index].price {
+                    } else if oldPrice[index].price > newStocksArray[index].price && newStocksArray[randomIndex].status == "open" {
                         newStocksArray[index].percentage = -(100 * (oldPrice[index].price - newStocksArray[index].price) / oldPrice[index].price)
                         newStocksArray[index].absolute = newStocksArray[index].price - oldPrice[index].price
                         self.presenter?.interactorDidFetchStocks(with: newStocksArray)
@@ -72,10 +72,10 @@ class Interactor: InteractorProtocol {
                 }
             case 25..<30:
                 if newStocksArray[randomIndex].status == "open" {
+                    newStocksArray[randomIndex].status = "closed"
+                    self.presenter?.interactorDidFetchStocks(with: newStocksArray)
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-                        newStocksArray[randomIndex].status = "closed"
-                        self.presenter?.interactorDidFetchStocks(with: newStocksArray)
-                        print("111")
+                        newStocksArray[randomIndex].status = "open"
                     }
                 }
             default:
