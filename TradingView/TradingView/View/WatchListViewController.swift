@@ -25,7 +25,17 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
             self.createStockDataSource()
         }
     }
+            
+
     
+    // MARK: ViewDidLoad
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureTableView()
+        tableView.delegate = self
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Watchlist"
+    }
     // MARK: TableView
     
     private var tableView: UITableView!
@@ -45,16 +55,6 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    // MARK: ViewDidLoad
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureTableView()
-        tableView.delegate = self
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Watchlist"
-    }
-    
     //MARK: DiffableDataSource
     
     private var dataSource: UITableViewDiffableDataSource<StocksCategoriesSection, Stocks>!
@@ -63,10 +63,11 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
         
         dataSource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { tableView, indexPath, allStocksData -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: WatchListCell.identifier, for: indexPath) as! WatchListCell
+            
             cell.stockNameLabel.text = allStocksData.name
             cell.stockImage.loadImageWithUrl(allStocksData.logo)
-            
-            
+            cell.stockSubtitle.text = allStocksData.description
+            cell.stockPrice.text = "\(String(format: "%.2f", allStocksData.price))"
             
             if allStocksData.status == "closed" {
                 cell.stockMarketClosed.text = "Market Closed"
@@ -75,9 +76,6 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
             } else {
                 cell.stockMarketClosed.isHidden = true
             }
-            
-            cell.stockSubtitle.text = allStocksData.description
-            cell.stockPrice.text = "\(String(format: "%.2f", allStocksData.price))"
             
             switch allStocksData.percentage.sign {
             case .minus:
@@ -92,7 +90,6 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
                 cell.stockAbsolute.text = "+\(String(format: "%.3f", (allStocksData.absolute)))"
                 cell.stockPercentage.text = "+\(String(format: "%.2f", (allStocksData.percentage)))%"
             }
-            
             return cell
         })
         updateDataSource()

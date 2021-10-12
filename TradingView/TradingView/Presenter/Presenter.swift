@@ -7,10 +7,6 @@
 
 import UIKit
 
-enum FetchError: Error {
-    case failed
-}
-
 protocol PresenterProtocol {
     var router: RouterProtocol? { get set }
     var interactor: InteractorProtocol? { get set }

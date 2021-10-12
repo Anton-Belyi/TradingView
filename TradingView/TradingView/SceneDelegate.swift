@@ -20,19 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let router = Router.start()
         let initVC = router.entry
         let window = UIWindow(windowScene: windowScene)
-//        window.rootViewController = initVC
         self.window = window
         window.makeKeyAndVisible()
         
         let navigationController = UINavigationController(rootViewController: initVC!)
         window.rootViewController = navigationController
-        
-//        let window = UIWindow(windowScene: windowScene)
-//        let mainVC = WatchListViewController()
-//        let navigationVC = UINavigationController(rootViewController: mainVC)
-//        window.rootViewController = navigationVC
-//        window.makeKeyAndVisible()
-//        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

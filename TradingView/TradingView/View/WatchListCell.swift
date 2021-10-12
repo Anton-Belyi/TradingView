@@ -85,7 +85,6 @@ class WatchListCell: UITableViewCell {
         contentView.addSubview(stockPercentage)
         contentView.addSubview(stockAbsolute)
         contentView.addSubview(stockMarketClosed)
-        
     }
     
     required init?(coder: NSCoder) {

@@ -10,7 +10,7 @@ import UIKit
 typealias EntryPoint = UIViewController
 
 protocol RouterProtocol {
-    var entry: EntryPoint?  { get } // Удалить
+    var entry: EntryPoint?  { get } 
     static func start() -> RouterProtocol
 }
 
