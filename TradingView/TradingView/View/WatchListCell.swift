@@ -16,6 +16,7 @@ class WatchListCell: UITableViewCell {
     var stockPrice = UILabel()
     var stockPercentage = UILabel()
     var stockAbsolute = UILabel()
+    var stockMarketClosed = UILabel()
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -66,8 +67,13 @@ class WatchListCell: UITableViewCell {
         
         // AbsolutePrice
         stockAbsolute.frame = CGRect(x: contentView.frame.size.width - stockAbsolute.frame.size.width - 75, y: stockPrice.frame.size.height + 19, width: 60, height: 16)
-        stockAbsolute.font = stockPercentage.font.withSize(15)
+        stockAbsolute.font = stockAbsolute.font.withSize(15)
         stockAbsolute.textAlignment = NSTextAlignment.right
+        
+        // stockMarketClosed
+        stockMarketClosed.frame = CGRect(x: stockImage.frame.size.width + 100, y: 11, width: 125, height: 16)
+        stockMarketClosed.font = UIFont.boldSystemFont(ofSize: 16)
+        stockMarketClosed.textAlignment = NSTextAlignment.center
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -78,6 +84,8 @@ class WatchListCell: UITableViewCell {
         contentView.addSubview(stockPrice)
         contentView.addSubview(stockPercentage)
         contentView.addSubview(stockAbsolute)
+        contentView.addSubview(stockMarketClosed)
+        
     }
     
     required init?(coder: NSCoder) {

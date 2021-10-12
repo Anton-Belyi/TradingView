@@ -15,8 +15,6 @@ class Interactor: InteractorProtocol {
     
     var presenter: PresenterProtocol?
     
-    //MARK: Network NOT IMPLEMENTED
-    
     func getStocks() {
         guard let path = Bundle.main.path(forResource: "data", ofType: "json") else { return }
         let url = URL(fileURLWithPath: path)
@@ -24,7 +22,7 @@ class Interactor: InteractorProtocol {
             guard let data = data, error == nil else { return }
             do {
                 let entities = try JSONDecoder().decode([Stocks].self, from: data)
-                // For first load for user
+                // First load stocks
                 self!.presenter?.interactorDidFetchStocks(with: entities)
                 
                     DispatchQueue.main.sync {
@@ -74,11 +72,12 @@ class Interactor: InteractorProtocol {
                 }
             case 25..<30:
                 if newStocksArray[randomIndex].status == "open" {
-                //MARK: NOT IMPLEMENTED
-//                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-//                        newStocksArray[randomIndex].status = "closed"
-//                        self.presenter?.interactorDidFetchStocks(with: newStocksArray)
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+                        newStocksArray[randomIndex].status = "closed"
+                        self.presenter?.interactorDidFetchStocks(with: newStocksArray)
+                        print("111")
                     }
+                }
             default:
                 break
             }

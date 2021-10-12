@@ -66,6 +66,16 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
             cell.stockNameLabel.text = allStocksData.name
             cell.stockImage.loadImageWithUrl(allStocksData.logo)
             
+            
+            
+            if allStocksData.status == "closed" {
+                cell.stockMarketClosed.text = "Market Closed"
+                cell.stockMarketClosed.textColor = .red
+                cell.stockMarketClosed.isHidden = false
+            } else {
+                cell.stockMarketClosed.isHidden = true
+            }
+            
             cell.stockSubtitle.text = allStocksData.description
             cell.stockPrice.text = "\(String(format: "%.2f", allStocksData.price))"
             
