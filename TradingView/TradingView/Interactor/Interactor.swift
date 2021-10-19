@@ -27,7 +27,7 @@ class Interactor: InteractorProtocol {
                 self.presenter?.interactorDidFetchStocks(with: entities)
                 
                 DispatchQueue.main.sync {
-                    
+                    self.priceСalculation(oldPrice: entities)
                 }
             }
             catch {
