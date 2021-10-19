@@ -26,7 +26,6 @@ class WatchListViewController: UIViewController, UITableViewDelegate, ViewProtoc
         }
     }
             
-
     
     // MARK: ViewDidLoad
     override func viewDidLoad() {

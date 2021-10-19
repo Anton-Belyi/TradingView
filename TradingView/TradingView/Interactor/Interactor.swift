@@ -9,7 +9,7 @@ import UIKit
 
 protocol InteractorProtocol {
     var presenter: PresenterProtocol? { get set }
-    func getStocks()
+        func getStocks()
 }
 class Interactor: InteractorProtocol {
     
@@ -18,15 +18,16 @@ class Interactor: InteractorProtocol {
     func getStocks() {
         guard let path = Bundle.main.path(forResource: "data", ofType: "json") else { return }
         let url = URL(fileURLWithPath: path)
-        let task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data, error == nil else { return }
             do {
                 let entities = try JSONDecoder().decode([Stocks].self, from: data)
                 // First load stocks
-                self!.presenter?.interactorDidFetchStocks(with: entities)
+                Interactor().presenter?.interactorDidFetchStocks(with: entities)
+                self.presenter?.interactorDidFetchStocks(with: entities)
                 
-                    DispatchQueue.main.sync {
-                    self?.priceСalculation(oldPrice: entities)
+                DispatchQueue.main.sync {
+                    
                 }
             }
             catch {
@@ -35,7 +36,8 @@ class Interactor: InteractorProtocol {
         }
         task.resume()
     }
-        
+    
+    
     func priceСalculation(oldPrice: [Stocks]) {
         
         var newStocksArray = oldPrice
@@ -84,3 +86,4 @@ class Interactor: InteractorProtocol {
         }
     }
 }
+
